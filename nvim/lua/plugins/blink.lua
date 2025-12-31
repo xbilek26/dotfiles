@@ -1,0 +1,27 @@
+return {
+    "Saghen/blink.cmp",
+    event = "InsertEnter",
+    config = function()
+        local blink = require("blink.cmp")
+
+        blink.setup({
+            keymap = { preset = "default" },
+
+            appearance = {
+                nerd_font_variant = "mono",
+            },
+
+            completion = {
+                documentation = { auto_show = false },
+            },
+
+            sources = {
+                default = { "lsp", "path", "snippets", "buffer" },
+            },
+
+            fuzzy = {
+                implementation = "lua",
+            },
+        })
+    end,
+}
