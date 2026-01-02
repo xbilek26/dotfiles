@@ -42,15 +42,15 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
-vim.keymap.set('n', "<C-p>", function()
+vim.keymap.set("n", "<C-p>", function()
     for _, win in ipairs(vim.fn.getwininfo()) do
         if win.quickfix == 1 then
-            vim.cmd('cclose')
+            vim.cmd("cclose")
             return
         end
     end
-    vim.cmd('copen')
-end, { desc = 'Toggle quickfix list' })
+    vim.cmd("copen")
+end, { desc = "Toggle quickfix list" })
 
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>")
 
