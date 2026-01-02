@@ -1,7 +1,7 @@
 return {
     "Bhanukamax/tman.nvim",
     config = function()
-        local tman = require('tman')
+        local tman = require("tman")
         tman.setup {
             split = "bottom", -- "bottom", "right"
             width = 50,

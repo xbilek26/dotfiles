@@ -4,7 +4,7 @@ return {
     version = "1.*",
     config = function()
         require("term-edit").setup({
-            prompt_end = '%$ ',
+            prompt_end = "%$ ",
         })
     end,
 }

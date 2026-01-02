@@ -1,7 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
-    build = ':TSUpdate',
+    build = ":TSUpdate",
     config = function()
         require("nvim-treesitter").install { "c", "cpp", "java" }
         vim.api.nvim_create_autocmd("FileType", {
