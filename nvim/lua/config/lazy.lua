@@ -40,8 +40,8 @@ vim.opt.signcolumn = "auto:1"
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
-vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<cr>")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<cr>")
 vim.keymap.set("n", "<C-p>", function()
     for _, win in ipairs(vim.fn.getwininfo()) do
         if win.quickfix == 1 then

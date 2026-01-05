@@ -5,10 +5,7 @@ return {
         { "<leader>pc", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
     },
     config = function()
-        local telescope = require("telescope")
-        local builtin = require("telescope.builtin")
-
-        telescope.setup {
+        require("telescope").setup {
             pickers = {
                 live_grep = {
                     file_ignore_patterns = { ".git", ".venv" },
