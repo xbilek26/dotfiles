@@ -2,9 +2,7 @@ return {
     "Saghen/blink.cmp",
     event = "InsertEnter",
     config = function()
-        local blink = require("blink.cmp")
-
-        blink.setup({
+        require("blink.cmp").setup({
             keymap = { preset = "default" },
 
             appearance = {
