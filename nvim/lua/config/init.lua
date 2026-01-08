@@ -23,6 +23,11 @@ vim.keymap.set("n", "<leader>v", vim.cmd.Ex)
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<cr>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<cr>")
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>")
+vim.keymap.set("t", "<C-^>", "<C-\\><C-n><C-^>")
+vim.keymap.set({"n", "t"}, "<C-h>", "<C-\\><C-n><C-w><C-h>")
+vim.keymap.set({"n", "t"}, "<C-l>", "<C-\\><C-n><C-w><C-l>")
+vim.keymap.set({"n", "t"}, "<C-j>", "<C-\\><C-n><C-w><C-j>")
+vim.keymap.set({"n", "t"}, "<C-k>", "<C-\\><C-n><C-w><C-k>")
 vim.keymap.set("n", "<leader>p", function()
     for _, win in ipairs(vim.fn.getwininfo()) do
         if win.quickfix == 1 then
@@ -36,6 +41,14 @@ end)
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
     callback = function()
-        vim.highlight.on_yank({higroup = "CursorLine", timeout = 70})
+        vim.highlight.on_yank({hlgroup = "CursorLine", timeout = 70})
+    end,
+})
+
+vim.api.nvim_create_autocmd({"ColorScheme", "BufReadPost", "BufNewFile"}, {
+    callback = function()
+        vim.api.nvim_set_hl(0, "@markup.raw", {
+            italic = false,
+        })
     end,
 })

@@ -1,3 +1,3 @@
 return {
-    "nguyenvukhang/nvim-toggler",
+    "nguyenvukhang/nvim-toggler"
 }
