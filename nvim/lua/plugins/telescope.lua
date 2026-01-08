@@ -1,8 +1,9 @@
 return {
     "nvim-telescope/telescope.nvim",
     keys = {
-        { "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-        { "<leader>pc", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+        { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+        { "<leader>g", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+        { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Show Buffers" },
     },
     opts = {
         pickers = {

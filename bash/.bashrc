@@ -136,5 +136,5 @@ set_prompt() {
 PROMPT_COMMAND=set_prompt
 
 if [[ -z "$TMUX" ]]; then
-    tmux attach-session -t 0 || tmux new-session -s 0
+    tmux attach-session -t main_sesh || tmux new-session -s main_sesh
 fi
