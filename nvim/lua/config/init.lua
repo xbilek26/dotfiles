@@ -23,7 +23,7 @@ vim.keymap.set("n", "<leader>v", vim.cmd.Ex)
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<cr>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<cr>")
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>")
-vim.keymap.set("n", "<C-p>", function()
+vim.keymap.set("n", "<leader>p", function()
     for _, win in ipairs(vim.fn.getwininfo()) do
         if win.quickfix == 1 then
             vim.cmd("cclose")
@@ -31,7 +31,7 @@ vim.keymap.set("n", "<C-p>", function()
         end
     end
     vim.cmd("copen")
-end, { desc = "Toggle quickfix list" })
+end)
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
