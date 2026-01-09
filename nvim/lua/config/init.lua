@@ -39,16 +39,8 @@ vim.keymap.set("n", "<leader>p", function()
 end)
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
+    group = vim.api.nvim_create_augroup("YankHiglight", { clear = true }),
     callback = function()
-        vim.highlight.on_yank({hlgroup = "CursorLine", timeout = 70})
-    end,
-})
-
-vim.api.nvim_create_autocmd({"ColorScheme", "BufReadPost", "BufNewFile"}, {
-    callback = function()
-        vim.api.nvim_set_hl(0, "@markup.raw", {
-            italic = false,
-        })
+        vim.highlight.on_yank({higroup = "FloatShadow", timeout = 70})
     end,
 })

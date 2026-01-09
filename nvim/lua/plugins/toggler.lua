@@ -1,3 +1,0 @@
-return {
-    "nguyenvukhang/nvim-toggler"
-}
