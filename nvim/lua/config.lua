@@ -10,6 +10,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.updatetime = 50
 vim.opt.termguicolors = true
+vim.opt.winborder = "rounded"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.numberwidth = 2
