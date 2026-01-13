@@ -29,6 +29,9 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("YankHiglight", { clear = true }),
     callback = function()
-        vim.highlight.on_yank({higroup = "FloatShadow", timeout = 45})
+        vim.highlight.on_yank({
+		higroup = "Visual",
+		timeout = 45
+	})
     end,
 })
