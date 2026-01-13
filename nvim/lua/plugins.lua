@@ -4,7 +4,13 @@ vim.pack.add({
 })
 
 require("vague").setup({
+    lazy = false,
+    priority = 1000,
+    bold = false,
     italic = false,
+    colors = {
+        bg = "#000000",
+    }
 })
 vim.cmd("colorscheme vague")
 
@@ -52,10 +58,6 @@ vim.lsp.enable({
     "lua_ls", "clangd", "jdtls"
 })
 
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { silent = true })
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { silent = true })
-
-
 vim.diagnostic.config({
     virtual_text = true,
     signs = true,
@@ -91,13 +93,18 @@ vim.pack.add({
 })
 
 require("nvim-treesitter").setup({
-    lazy = false,
     build = ":TSUpdate",
-    config = function()
-        require("nvim-treesitter").install { "c", "cpp", "java", "lua" }
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = { "c", "cpp", "java", "lua" },
-            callback = function() vim.treesitter.start() end,
-        })
-    end,
+    ensure_installed = {
+        "c",
+        "cpp",
+        "python",
+        "html",
+        "css",
+        "matlab",
+        "javascript",
+        "lua",
+        "vim",
+        "vimdoc",
+        "query"
+    },
 })
