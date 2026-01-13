@@ -84,6 +84,9 @@ vim.pack.add({
 require("smear_cursor").setup({
     opts = {
         time_interval = 7,
+        stiffness = 0.5,
+        trailing_stiffness = 0.5,
+        matrix_pixel_threshold = 0.5,
     },
 })
 
