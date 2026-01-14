@@ -115,3 +115,14 @@ require("nvim-treesitter").setup({
         "query"
     },
 })
+
+-- Typst nvim plugin
+vim.pack.add({
+    "https://github.com/chomosuke/typst-preview.nvim",
+})
+
+require("typst-preview").setup({
+    lazy = false,
+    version = '1.*',
+    opts = {},
+})
