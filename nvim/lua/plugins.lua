@@ -59,7 +59,7 @@ vim.pack.add({
 })
 
 vim.lsp.enable({
-    "lua_ls", "clangd", "jdtls"
+    "lua_ls", "clangd", "jdtls", "tinymist"
 })
 
 vim.diagnostic.config({
@@ -78,20 +78,6 @@ require("lualine").setup({
     lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
-})
-
--- Moving cursor
-vim.pack.add({
-    "https://github.com/sphamba/smear-cursor.nvim",
-})
-
-require("smear_cursor").setup({
-    opts = {
-        time_interval = 7,
-        stiffness = 0.5,
-        trailing_stiffness = 0.5,
-        matrix_pixel_threshold = 0.5,
-    },
 })
 
 -- Parser

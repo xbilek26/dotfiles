@@ -23,7 +23,7 @@ set_prompt() {
     if [ "$PWD" = "$HOME" ]; then
         PS1="\$ "
     else
-        PS1="${PURPLE}\w${RESET}\$ "
+        PS1="${PURPLE}\w\n${RESET}\$ "
     fi
 }
 
@@ -40,3 +40,4 @@ fi
 alias vim='nvim'
 alias gdb="gdb -q"
 unset DEBUGINFOD_URLS
+. "$HOME/.cargo/env"
