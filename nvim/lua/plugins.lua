@@ -9,7 +9,7 @@ require("vague").setup({
     bold = false,
     italic = false,
     colors = {
-        bg = "#000000",
+        bg = "#111111",
     }
 })
 vim.cmd("colorscheme vague")

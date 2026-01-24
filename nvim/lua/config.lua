@@ -1,4 +1,5 @@
 vim.opt.guicursor = ""
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -14,16 +15,24 @@ vim.opt.numberwidth = 2
 vim.opt.signcolumn = "auto:1"
 
 vim.g.mapleader = " "
-vim.g.netrw_banner = 0
+vim.g.netrw_banner = false
+vim.g.netrw_keepdir = false
 
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { silent = true })
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { silent = true })
-vim.keymap.set("n", "<leader>v", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e", function() vim.cmd("Exp!") end)
+vim.keymap.set("n", "<leader>s", function() vim.cmd("Sex!") end)
+vim.keymap.set("n", "<leader>h", function() vim.cmd("Hex!") end)
+vim.keymap.set("n", "<C-n>", function() pcall(vim.cmd, "cnext") end)
+vim.keymap.set("n", "<C-p>", function() pcall(vim.cmd, "cprev") end)
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>")
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
+vim.keymap.set("n", "<C-h>", "<C-W><C-h>")
+vim.keymap.set("n", "<C-l>", "<C-W><C-l>")
+vim.keymap.set("n", "<C-j>", "<C-W><C-j>")
+vim.keymap.set("n", "<C-k>", "<C-W><C-k>")
+
+vim.keymap.set("n", "<A-h>", "<CMD>vertical resize -2<CR>")
+vim.keymap.set("n", "<A-l>", "<CMD>vertical resize +2<CR>")
+vim.keymap.set("n", "<A-k>", "<CMD>resize -2<CR>")
+vim.keymap.set("n", "<A-j>", "<CMD>resize +2<CR>")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("YankHiglight", { clear = true }),
