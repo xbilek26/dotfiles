@@ -9,7 +9,7 @@ require("vague").setup({
     bold = false,
     italic = false,
     colors = {
-        bg = "#111111",
+        bg = "#181818",
     }
 })
 vim.cmd("colorscheme vague")
@@ -63,8 +63,8 @@ vim.lsp.enable({
 })
 
 vim.diagnostic.config({
-    virtual_text = true,
-    signs = true,
+    virtual_text = false,
+    signs = false,
     underline = false,
     update_in_insert = false,
 })
@@ -77,7 +77,13 @@ vim.pack.add({
 require("lualine").setup({
     lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
+    options = {
+        sections = {
+            lualine_c = {
+                'filename',
+            },
+        },
+    },
 })
 
 -- Parser

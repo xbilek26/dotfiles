@@ -13,6 +13,7 @@ vim.opt.termguicolors = true
 vim.opt.winborder = "rounded"
 vim.opt.numberwidth = 2
 vim.opt.signcolumn = "auto:1"
+vim.opt.showmode = false
 
 vim.g.mapleader = " "
 vim.g.netrw_banner = false
