@@ -22,8 +22,6 @@ vim.g.netrw_keepdir = false
 vim.keymap.set("n", "<leader>e", function() vim.cmd("Exp!") end)
 vim.keymap.set("n", "<leader>s", function() vim.cmd("Sex!") end)
 vim.keymap.set("n", "<leader>h", function() vim.cmd("Hex!") end)
-vim.keymap.set("n", "<C-n>", function() pcall(vim.cmd, "cnext") end)
-vim.keymap.set("n", "<C-p>", function() pcall(vim.cmd, "cprev") end)
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>")
 vim.keymap.set("n", "<C-h>", "<C-W><C-h>")
 vim.keymap.set("n", "<C-l>", "<C-W><C-l>")
