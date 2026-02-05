@@ -20,8 +20,9 @@ vim.g.netrw_banner = false
 vim.g.netrw_keepdir = false
 
 vim.keymap.set("n", "<leader>e", function() vim.cmd("Exp!") end)
-vim.keymap.set("n", "<leader>s", function() vim.cmd("Sex!") end)
 vim.keymap.set("n", "<leader>h", function() vim.cmd("Hex!") end)
+vim.keymap.set("n", "<leader>l", function() vim.cmd("Lex!") end)
+vim.keymap.set("n", "<leader>s", function() vim.cmd("Sex!") end)
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>")
 vim.keymap.set("n", "<C-h>", "<C-W><C-h>")
 vim.keymap.set("n", "<C-l>", "<C-W><C-l>")

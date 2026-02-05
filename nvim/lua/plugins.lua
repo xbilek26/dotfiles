@@ -59,7 +59,14 @@ vim.pack.add({
 })
 
 vim.lsp.enable({
-    "lua_ls", "clangd", "jdtls", "tinymist"
+    "clangd",
+    "rust_analyzer",
+    "jdtls",
+    "html",
+    "cssls",
+    "ts_ls",
+    "tinymist",
+    "lua_ls",
 })
 
 vim.diagnostic.config({
@@ -77,12 +84,13 @@ vim.pack.add({
 require("lualine").setup({
     lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    options = {
-        sections = {
-            lualine_c = {
-                'filename',
-            },
-        },
+    sections = {
+        lualine_a = {"mode"},
+        lualine_b = {"branch", "diff"},
+        lualine_c = {"filename"},
+        lualine_x = {},
+        lualine_y = {"progress"},
+        lualine_z = {"location"},
     },
 })
 
@@ -96,6 +104,7 @@ require("nvim-treesitter").setup({
     ensure_installed = {
         "c",
         "cpp",
+        "rust",
         "python",
         "html",
         "css",
