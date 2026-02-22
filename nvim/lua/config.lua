@@ -29,11 +29,6 @@ vim.keymap.set("n", "<C-l>", "<C-W><C-l>")
 vim.keymap.set("n", "<C-j>", "<C-W><C-j>")
 vim.keymap.set("n", "<C-k>", "<C-W><C-k>")
 
-vim.keymap.set("n", "<A-h>", "<CMD>vertical resize -2<CR>")
-vim.keymap.set("n", "<A-l>", "<CMD>vertical resize +2<CR>")
-vim.keymap.set("n", "<A-k>", "<CMD>resize -2<CR>")
-vim.keymap.set("n", "<A-j>", "<CMD>resize +2<CR>")
-
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("YankHiglight", { clear = true }),
     callback = function()
