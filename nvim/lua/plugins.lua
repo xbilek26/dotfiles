@@ -67,6 +67,7 @@ vim.lsp.enable({
     "ts_ls",
     "tinymist",
     "lua_ls",
+    "csharp_ls",
 })
 
 vim.diagnostic.config({
@@ -104,6 +105,7 @@ require("nvim-treesitter").setup({
     ensure_installed = {
         "c",
         "cpp",
+        "cs",
         "rust",
         "python",
         "html",
