@@ -23,11 +23,11 @@ vim.keymap.set("n", "<leader>e", function() vim.cmd("Exp!") end)
 vim.keymap.set("n", "<leader>h", function() vim.cmd("Hex!") end)
 vim.keymap.set("n", "<leader>l", function() vim.cmd("Lex!") end)
 vim.keymap.set("n", "<leader>s", function() vim.cmd("Sex!") end)
-vim.keymap.set("t", "<C-[>", "<C-\\><C-n>")
-vim.keymap.set("n", "<C-h>", "<C-W><C-h>")
-vim.keymap.set("n", "<C-l>", "<C-W><C-l>")
-vim.keymap.set("n", "<C-j>", "<C-W><C-j>")
-vim.keymap.set("n", "<C-k>", "<C-W><C-k>")
+vim.keymap.set("t", "<c-[>", "<c-\\><c-n>")
+vim.keymap.set("n", "<c-h>", "<c-w>h")
+vim.keymap.set("n", "<c-l>", "<c-w>l")
+vim.keymap.set("n", "<c-j>", "<c-w>j")
+vim.keymap.set("n", "<c-k>", "<c-w>k")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("YankHiglight", { clear = true }),
