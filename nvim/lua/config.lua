@@ -17,7 +17,6 @@ vim.opt.showmode = false
 
 vim.g.mapleader = " "
 vim.g.netrw_banner = false
-vim.g.netrw_keepdir = false
 
 vim.keymap.set("n", "<leader>e", function() vim.cmd("Exp!") end)
 vim.keymap.set("n", "<leader>h", function() vim.cmd("Hex!") end)
