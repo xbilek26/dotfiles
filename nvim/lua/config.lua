@@ -9,13 +9,11 @@ vim.opt.expandtab = true
 vim.opt.swapfile = false
 vim.opt.hlsearch = false
 vim.opt.numberwidth = 2
-vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.wildignore:append("*/node_modules/*")
 vim.g.netrw_list_hide = [[^\.[^./]\+]]
 
 vim.keymap.set("n", "<space>e", vim.cmd.Ex)
-vim.keymap.set("t", "<c-[>", "<c-\\><c-n>")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
