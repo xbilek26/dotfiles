@@ -1,19 +1,30 @@
+vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.guicursor = ""
+vim.opt.numberwidth = 2
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-vim.opt.wrap = false
 vim.opt.expandtab = true
-vim.opt.swapfile = false
 vim.opt.hlsearch = false
-vim.opt.numberwidth = 2
+vim.opt.wrap = false
 vim.opt.termguicolors = true
+vim.opt.swapfile = false
 vim.opt.wildignore:append("*/node_modules/*")
-vim.g.netrw_list_hide = [[^\.[^./]\+]]
 
-vim.keymap.set("n", "<space>e", vim.cmd.Ex)
+vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "FileType" }, {
+    callback = function()
+        vim.wo.cursorline = true
+        vim.wo.cursorlineopt = vim.bo.filetype == "netrw" and "both" or "number"
+    end,
+})
+
+vim.api.nvim_create_autocmd("WinLeave", {
+    callback = function()
+        vim.wo.cursorline = false
+        vim.wo.cursorlineopt = "number"
+    end,
+})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
@@ -21,16 +32,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
-vim.api.nvim_create_autocmd({ "WinEnter" }, {
-  callback = function()
-    vim.wo.cursorline = true
-  end,
-})
-
-vim.api.nvim_create_autocmd({ "WinLeave" }, {
-  callback = function()
-    vim.wo.cursorline = false
-  end,
-})
+vim.keymap.set("n", "<space>e", vim.cmd.Ex)
+vim.g.netrw_list_hide = [[^\.[^./]\+]]
