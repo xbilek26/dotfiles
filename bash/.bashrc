@@ -18,12 +18,24 @@ fi
 
 set_prompt() {
     local RESET='\[\033[00m\]'
-    local PURPLE='\[\033[35m\]'
+    local BLUE='\[\033[34m\]'
+    local GREEN='\[\033[32m\]'
+    local YELLOW='\[\033[33m\]'
+
+    local HOST_INDICATOR=""
+    if [ -n "$SSH_CONNECTION" ] || [ -n "$SSH_TTY" ]; then
+        HOST_INDICATOR="${YELLOW}[ssh] ${RESET}"
+    fi
+
+    local VENV=""
+    if [ -n "$VIRTUAL_ENV" ]; then
+        VENV="(${GREEN}$(basename "$VIRTUAL_ENV")${RESET}) "
+    fi
 
     if [ "$PWD" = "$HOME" ]; then
-        PS1="\$ "
+        PS1="${HOST_INDICATOR}${VENV}\$ "
     else
-        PS1="${PURPLE}\w\n${RESET}\$ "
+        PS1="${HOST_INDICATOR}${VENV}${BLUE}\w\n${RESET}\$ "
     fi
 }
 
@@ -39,12 +51,9 @@ fi
 
 alias vim='nvim'
 alias gdb="gdb -q"
+alias tmux="tmux new-session -A -s main"
 unset DEBUGINFOD_URLS
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
