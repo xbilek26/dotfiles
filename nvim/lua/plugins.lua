@@ -11,6 +11,10 @@ require("vague").setup({
         hl.StatusLine = { bg = colors.line  }
         hl.netrwMarkFile = { bold = true }
     end,
+    colors = {
+        string = "#e6b68d",
+        number = "#e1a56a",
+    },
 })
 
 vim.cmd("colorscheme vague")

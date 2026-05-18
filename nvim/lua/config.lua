@@ -10,7 +10,9 @@ vim.opt.hlsearch = false
 vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.swapfile = false
-vim.opt.wildignore:append("*/node_modules/*")
+vim.opt.wildignore:append({"*/node_modules/*", "*/assets/*"})
+vim.g.netrw_list_hide = [[^\.[^./]\+]]
+vim.g.loaded_matchparen = true
 
 vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "FileType" }, {
     callback = function()
@@ -31,6 +33,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank({ higroup = "Visual", timeout = 35 })
     end,
 })
-
-vim.keymap.set("n", "<space>e", vim.cmd.Ex)
-vim.g.netrw_list_hide = [[^\.[^./]\+]]
