@@ -1,4 +1,3 @@
-vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.numberwidth = 2
@@ -10,9 +9,21 @@ vim.opt.hlsearch = false
 vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.swapfile = false
-vim.opt.wildignore:append({"*/node_modules/*", "*/assets/*"})
 vim.g.netrw_list_hide = [[^\.[^./]\+]]
 vim.g.loaded_matchparen = true
+vim.o.pumborder = "single"
+vim.o.pumblend = 9
+vim.o.winborder = "single"
+vim.o.winblend = 9
+vim.opt.guicursor = "a:block-blinkwait100-blinkon100-blinkoff100"
+vim.opt.wildignore:append({
+    "*/node_modules",
+    "*/dist",
+    "*/assets",
+    "*/__pycache__",
+})
+
+vim.api.nvim_create_user_command("E", "Explore", { bang = true, nargs = "*" })
 
 vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "FileType" }, {
     callback = function()
@@ -29,7 +40,8 @@ vim.api.nvim_create_autocmd("WinLeave", {
 })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
+    pattern = "*",
     callback = function()
-        vim.highlight.on_yank({ higroup = "Visual", timeout = 35 })
+        vim.highlight.on_yank({ higroup = "Visual", timeout = 50 })
     end,
 })

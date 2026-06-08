@@ -21,24 +21,20 @@ set_prompt() {
     local BLUE='\[\033[34m\]'
     local GREEN='\[\033[32m\]'
     local YELLOW='\[\033[33m\]'
-
     local HOST_INDICATOR=""
     if [ -n "$SSH_CONNECTION" ] || [ -n "$SSH_TTY" ]; then
         HOST_INDICATOR="${YELLOW}[ssh] ${RESET}"
     fi
-
     local VENV=""
     if [ -n "$VIRTUAL_ENV" ]; then
         VENV="(${GREEN}$(basename "$VIRTUAL_ENV")${RESET}) "
     fi
-
     if [ "$PWD" = "$HOME" ]; then
         PS1="${HOST_INDICATOR}${VENV}\$ "
     else
         PS1="${HOST_INDICATOR}${VENV}${BLUE}\w\n${RESET}\$ "
     fi
 }
-
 PROMPT_COMMAND=set_prompt
 
 if [ -x /usr/bin/dircolors ]; then
@@ -51,7 +47,6 @@ fi
 
 alias vim='nvim'
 alias gdb="gdb -q"
-alias tmux="tmux new-session -A -s main"
 unset DEBUGINFOD_URLS
 
 export NVM_DIR="$HOME/.nvm"

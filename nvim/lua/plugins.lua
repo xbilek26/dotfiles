@@ -11,10 +11,6 @@ require("vague").setup({
         hl.StatusLine = { bg = colors.line  }
         hl.netrwMarkFile = { bold = true }
     end,
-    colors = {
-        string = "#e6b68d",
-        number = "#e1a56a",
-    },
 })
 
 vim.cmd("colorscheme vague")
@@ -56,7 +52,6 @@ vim.pack.add({
 vim.lsp.enable({
     "clangd",
     "basedpyright",
-    "ts_ls",
 })
 
 vim.diagnostic.config({
@@ -74,27 +69,12 @@ vim.pack.add({
     "https://github.com/johnseth97/codex.nvim"
 })
 
-------------------------------------------------------------
-
-vim.pack.add({
-    "https://github.com/monkoose/neocodeium",
+vim.keymap.set("n", " c", vim.cmd.Codex)
+vim.api.nvim_create_autocmd("BufEnter", {
+    callback = function()
+        local ft = vim.bo.filetype
+        if ft == "codex" then
+            vim.wo.winblend = 0
+        end
+    end,
 })
-
-neocodeium = require("neocodeium")
-
-neocodeium.setup({
-    manual = true,
-    show_label = false,
-    silent = true,
-})
-
-vim.keymap.set("i", "<C-u>", neocodeium.cycle_or_complete)
-vim.keymap.set("i", "<C-y>", neocodeium.accept)
-
-------------------------------------------------------------
-
-vim.pack.add({
-    "https://github.com/github/copilot.vim",
-})
-
-vim.g.copilot_enabled = false
