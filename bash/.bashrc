@@ -48,4 +48,3 @@ fi
 alias vim='nvim'
 
 export NVM_DIR="$HOME/.local/share/nvm/.nvm"
-export PYTHON_HISTORY="$HOME/.local/share/python/.python_history"
