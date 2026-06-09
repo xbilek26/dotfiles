@@ -46,9 +46,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 alias vim='nvim'
-alias gdb="gdb -q"
-unset DEBUGINFOD_URLS
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+export NVM_DIR="$HOME/.local/share/nvm/.nvm"
+export PYTHON_HISTORY="$HOME/.local/share/python/.python_history"
