@@ -11,10 +11,9 @@ vim.opt.termguicolors = true
 vim.opt.swapfile = false
 vim.g.netrw_list_hide = [[^\.[^./]\+]]
 vim.g.loaded_matchparen = true
-vim.o.pumborder = "single"
-vim.o.pumblend = 9
-vim.o.winborder = "single"
-vim.o.winblend = 9
+vim.g.mapleader = " "
+vim.o.pumborder = "rounded"
+vim.o.winborder = "rounded"
 vim.opt.guicursor = "a:block-blinkwait100-blinkon100-blinkoff100"
 vim.opt.wildignore:append({
     "*/node_modules",

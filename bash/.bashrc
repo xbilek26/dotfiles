@@ -48,3 +48,4 @@ fi
 alias vim='nvim'
 
 export NVM_DIR="$HOME/.local/share/nvm/.nvm"
+export PATH="$HOME/.local/share/nvm/.nvm/versions/node/v20.20.1/bin:$PATH"

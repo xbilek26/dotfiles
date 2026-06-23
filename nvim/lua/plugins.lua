@@ -7,19 +7,21 @@ require("vague").setup({
     bold = false,
     italic = false,
     on_highlights = function(hl, colors)
-        hl.ModeMsg = {}
-        hl.StatusLine = { bg = colors.line  }
-        hl.netrwMarkFile = { bold = true }
+        hl.ModeMsg = { fg = colors.fg }
+        hl.StatusLine = { bg = colors.line }
+        hl.NetrwMarkFile = { bold = true }
     end,
 })
 
-vim.cmd("colorscheme vague")
+vim.cmd.colorscheme("vague")
 
 ------------------------------------------------------------
 
 vim.pack.add({
     "https://github.com/tpope/vim-fugitive",
 })
+
+vim.keymap.set("n", "<leader>g", vim.cmd.Git)
 
 ------------------------------------------------------------
 
@@ -63,18 +65,23 @@ vim.diagnostic.config({
 
 vim.diagnostic.status = function() return "" end
 
---------------------------------------------------------------
+------------------------------------------------------------
 
 vim.pack.add({
-    "https://github.com/johnseth97/codex.nvim"
+    "https://github.com/rhart92/codex.nvim"
 })
 
-vim.keymap.set("n", " c", vim.cmd.Codex)
-vim.api.nvim_create_autocmd("BufEnter", {
-    callback = function()
-        local ft = vim.bo.filetype
-        if ft == "codex" then
-            vim.wo.winblend = 0
-        end
-    end,
-})
+vim.schedule(function()
+    require("codex").setup({
+        split = "float",
+        float = {
+            width = 0.8,
+            height = 0.8,
+            title = "Codex",
+        },
+    })
+end)
+
+vim.keymap.set("n", "<leader>c", function() require("codex").toggle() end)
+vim.keymap.set("t", "<C-w><C-q>", function() require("codex").toggle() end)
+vim.keymap.set("v", "<leader>s", function() require("codex").actions.send_selection() end)
