@@ -68,20 +68,7 @@ vim.diagnostic.status = function() return "" end
 ------------------------------------------------------------
 
 vim.pack.add({
-    "https://github.com/rhart92/codex.nvim"
+    "https://github.com/johnseth97/codex.nvim"
 })
 
-vim.schedule(function()
-    require("codex").setup({
-        split = "float",
-        float = {
-            width = 0.8,
-            height = 0.8,
-            title = "Codex",
-        },
-    })
-end)
-
-vim.keymap.set("n", "<leader>c", function() require("codex").toggle() end)
-vim.keymap.set("t", "<C-w><C-q>", function() require("codex").toggle() end)
-vim.keymap.set("v", "<leader>s", function() require("codex").actions.send_selection() end)
+vim.keymap.set("n", "<leader>c", vim.cmd.CodexToggle)

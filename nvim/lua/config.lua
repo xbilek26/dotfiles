@@ -22,8 +22,6 @@ vim.opt.wildignore:append({
     "*/__pycache__",
 })
 
-vim.api.nvim_create_user_command("E", "Explore", { bang = true, nargs = "*" })
-
 vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "FileType" }, {
     callback = function()
         vim.wo.cursorline = true
