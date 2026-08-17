@@ -64,11 +64,3 @@ vim.diagnostic.config({
 })
 
 vim.diagnostic.status = function() return "" end
-
-------------------------------------------------------------
-
-vim.pack.add({
-    "https://github.com/johnseth97/codex.nvim"
-})
-
-vim.keymap.set("n", "<leader>c", vim.cmd.CodexToggle)
