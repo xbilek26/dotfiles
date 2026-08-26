@@ -51,8 +51,8 @@ export NVM_DIR="$HOME/.local/share/nvm/.nvm"
 export PATH="$HOME/.local/share/nvm/.nvm/versions/node/v20.20.1/bin:$PATH"
 export FCEDIT=nvim
 export mnt="/mnt/c/Users/bilek"
-export dwn="$mnt/Downloads"
-export dtp="$mnt/Desktop"
+export dw="$mnt/Downloads"
+export dt="$mnt/Desktop"
 
 # enable forward search
 stty -ixon
