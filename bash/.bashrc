@@ -53,3 +53,6 @@ export FCEDIT=nvim
 export mnt="/mnt/c/Users/bilek"
 export dwn="$mnt/Downloads"
 export dtp="$mnt/Desktop"
+
+# enable forward search
+stty -ixon

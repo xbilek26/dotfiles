@@ -20,6 +20,7 @@ vim.opt.wildignore:append({
     "*/dist",
     "*/assets",
     "*/__pycache__",
+    "*/.venv",
 })
 
 vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "FileType" }, {
