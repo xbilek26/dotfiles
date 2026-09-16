@@ -3,13 +3,14 @@ vim.pack.add({
 })
 
 require("vague").setup({
-    transparent = true,
     bold = false,
     italic = false,
     on_highlights = function(hl, colors)
         hl.ModeMsg = { fg = colors.fg }
         hl.StatusLine = { bg = colors.line }
         hl.NetrwMarkFile = { bold = true }
+        hl.Pmenu = { bg = nil }
+        hl.Directory = { fg = "#8ba9c1" }
     end,
 })
 

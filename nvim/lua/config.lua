@@ -12,8 +12,8 @@ vim.opt.swapfile = false
 vim.g.netrw_list_hide = [[^\.[^./]\+]]
 vim.g.loaded_matchparen = true
 vim.g.mapleader = " "
-vim.o.pumborder = "rounded"
-vim.o.winborder = "rounded"
+vim.opt.pumborder = "rounded"
+vim.opt.winborder = "rounded"
 vim.opt.guicursor = "a:block-blinkwait100-blinkon100-blinkoff100"
 vim.opt.wildignore:append({
     "*/node_modules",
@@ -40,6 +40,6 @@ vim.api.nvim_create_autocmd("WinLeave", {
 vim.api.nvim_create_autocmd("TextYankPost", {
     pattern = "*",
     callback = function()
-        vim.highlight.on_yank({ higroup = "Visual", timeout = 50 })
+        vim.highlight.on_yank({ higroup = "Visual", timeout = 45 })
     end,
 })
