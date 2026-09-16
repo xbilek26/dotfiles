@@ -50,9 +50,6 @@ alias vim='nvim'
 export NVM_DIR="$HOME/.local/share/nvm/.nvm"
 export PATH="$HOME/.local/share/nvm/.nvm/versions/node/v20.20.1/bin:$PATH"
 export FCEDIT=nvim
-export mnt="/mnt/c/Users/bilek"
-export w="$mnt/Downloads"
-export d="$mnt/Desktop"
 
 export PYTHONDONTWRITEBYTECODE=1
 
