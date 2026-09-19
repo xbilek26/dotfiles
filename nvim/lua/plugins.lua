@@ -7,7 +7,6 @@ require("vague").setup({
     italic = false,
     on_highlights = function(hl, colors)
         hl.ModeMsg = { fg = colors.fg }
-        hl.StatusLine = { bg = colors.line }
         hl.NetrwMarkFile = { bold = true }
         hl.Pmenu = { bg = nil }
         hl.Directory = { fg = "#8ba9c1" }
@@ -59,8 +58,8 @@ vim.lsp.enable({
 
 vim.diagnostic.config({
     virtual_text = false,
-    signs = false,
     underline = false,
+    signs = false,
     update_in_insert = false,
 })
 
