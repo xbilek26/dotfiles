@@ -5,6 +5,9 @@ vim.pack.add({
 require("vague").setup({
     bold = false,
     italic = false,
+    colors = {
+        bg = "#000000"
+    },
     on_highlights = function(hl, colors)
         hl.ModeMsg = { fg = colors.fg }
         hl.NetrwMarkFile = { bold = true }

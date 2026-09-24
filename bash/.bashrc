@@ -53,14 +53,12 @@ export FCEDIT=nvim
 
 export PYTHONDONTWRITEBYTECODE=1
 
-tmux() {
-    if [ $# -gt 0 ]; then
-        command tmux "$@"
-    elif command tmux has-session 2>/dev/null; then
+if [[ $- == *i* ]] && [ -z "$TMUX" ] && [ -t 1 ]; then
+    if command tmux has-session 2>/dev/null; then
         command tmux attach
     else
         command tmux new-session \; \
-            new-window "ssh obsahovka" \; \
-            select-window -t 1
+        new-window "ssh obsahovka" \; \
+        select-window -t 2
     fi
-}
+fi
