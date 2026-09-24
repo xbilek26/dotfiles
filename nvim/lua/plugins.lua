@@ -8,7 +8,7 @@ require("vague").setup({
     on_highlights = function(hl, colors)
         hl.ModeMsg = { fg = colors.fg }
         hl.NetrwMarkFile = { bold = true }
-        hl.Directory = { fg = "#8ba9c1" }
+        hl.Directory = { fg = colors.keyword }
     end,
 })
 
@@ -20,7 +20,7 @@ vim.pack.add({
     "https://github.com/tpope/vim-fugitive",
 })
 
-vim.keymap.set("n", "<leader>g", vim.cmd.Git)
+vim.keymap.set("n", "<leader>gg", vim.cmd.Git)
 
 ------------------------------------------------------------
 
@@ -33,7 +33,7 @@ require("nvim-treesitter").install({
     "python",
     "cpp",
     "javascript",
-    "typescript"
+    "typescript",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd("FileType", {
         "c",
         "cpp",
         "javascript",
-        "typescript"
+        "typescript",
     },
     callback = function(args)
         pcall(vim.treesitter.start, args.buf)
@@ -93,4 +93,3 @@ vim.pack.add({
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files)
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles)
-vim.keymap.set('n', '<leader>fg', builtin.live_grep)

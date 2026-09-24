@@ -53,5 +53,14 @@ export FCEDIT=nvim
 
 export PYTHONDONTWRITEBYTECODE=1
 
-# enable forward search
-stty -ixon
+tmux() {
+    if [ $# -gt 0 ]; then
+        command tmux "$@"
+    elif command tmux has-session 2>/dev/null; then
+        command tmux attach
+    else
+        command tmux new-session \; \
+            new-window "ssh obsahovka" \; \
+            select-window -t 1
+    fi
+}
